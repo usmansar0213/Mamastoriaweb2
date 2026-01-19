@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Technology - MamaStoria</title>
+    <link rel="icon" type="image/png" href="src/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body class="bg-white">
+    
+    <header class="fixed top-0 left-0 right-0 bg-white border-b border-gray-100 z-50 shadow-sm">
+      <div class="max-w-[1400px] mx-auto px-4 py-4 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2 text-lg font-bold hover:text-[#00D564]">
+          <i class="fas fa-arrow-left"></i>
+          <img src="src/mamastoria-large.png" alt="MamaStoria" class="h-10 w-auto object-contain">
+        </a>
+        <nav class="hidden md:flex gap-8">
+          <a href="about.html" class="hover:text-[#00D564] transition">About</a>
+          <a href="team.html" class="hover:text-[#00D564] transition">Team</a>
+          <a href="technology.html" class="font-semibold text-[#00D564]">Technology</a>
+          <a href="contact.html" class="hover:text-[#00D564] transition">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="pt-20">
+      <!-- Hero -->
+      <section class="bg-gradient-to-br from-[#00D564] to-[#00a549] text-white py-20 px-4">
+        <div class="max-w-[800px] mx-auto text-center">
+          <h1 class="text-5xl font-bold mb-6">Our Technology Stack</h1>
+          <p class="text-xl opacity-90">Built on cutting-edge AI, scalable infrastructure, and best practices for web performance.</p>
+        </div>
+      </section>
+
+      <!-- Architecture Overview -->
+      <section class="max-w-[1200px] mx-auto px-4 py-20">
+        <h2 class="text-3xl font-bold mb-12">Architecture Overview</h2>
+        <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-12 rounded-lg border border-gray-200 mb-12">
+          <div class="grid md:grid-cols-3 gap-8 text-center">
+            <div>
+              <i class="fas fa-laptop text-[#00D564] text-4xl mb-4 block"></i>
+              <h3 class="font-bold mb-2">Frontend</h3>
+              <p class="text-sm text-gray-600">React, Next.js, TailwindCSS<br>Fast, responsive, SEO-optimized</p>
+            </div>
+            <div>
+              <i class="fas fa-server text-[#00D564] text-4xl mb-4 block"></i>
+              <h3 class="font-bold mb-2">Backend</h3>
+              <p class="text-sm text-gray-600">Node.js, Go, Python<br>Microservices, REST APIs, gRPC</p>
+            </div>
+            <div>
+              <i class="fas fa-database text-[#00D564] text-4xl mb-4 block"></i>
+              <h3 class="font-bold mb-2">Data</h3>
+              <p class="text-sm text-gray-600">PostgreSQL, Redis, Elasticsearch<br>Analytics with BigQuery</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Frontend Stack -->
+      <section class="max-w-[1200px] mx-auto px-4 py-12">
+        <h3 class="text-2xl font-bold mb-6">Frontend Architecture</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <h4 class="font-bold text-lg mb-4">🎨 User Interface</h4>
+            <ul class="space-y-3 text-gray-600">
+              <li class="flex items-start gap-3">
+                <span class="text-[#00D564]">✓</span>
+                <div>
+                  <p class="font-semibold">React 18</p>
+                  <p class="text-sm">Component-based UI with hooks</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-[#00D564]">✓</span>
+                <div>
+                  <p class="font-semibold">Next.js 13</p>
+                  <p class="text-sm">Server-side rendering, static generation</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-[#00D564]">✓</span>
+                <div>
+                  <p class="font-semibold">TailwindCSS</p>
+                  <p class="text-sm">Utility-first CSS framework</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <h4 class="font-bold text-lg mb-4">⚡ Performance</h4>
+            <ul class="space-y-3 text-gray-600">
+              <li class="flex items-start gap-3">
+                <span class="text-[#00D564]">✓</span>
+                <div>
+                  <p class="font-semibold">Code Splitting</p>
+                  <p class="text-sm">Route-based lazy loading</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-[#00D564]">✓</span>
+                <div>
+                  <p class="font-semibold">Image Optimization</p>
+                  <p class="text-sm">WebP, AVIF, responsive images</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-[#00D564]">✓</span>
+                <div>
+                  <p class="font-semibold">CDN Caching</p>
+                  <p class="text-sm">Global edge network delivery</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI/ML Capabilities -->
+      <section class="bg-gray-50 py-20 px-4">
+        <div class="max-w-[1200px] mx-auto">
+          <h3 class="text-2xl font-bold mb-6">🧠 AI Pipeline & Technology</h3>
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <h4 class="font-bold text-lg mb-4">📝 Story & Script Generation</h4>
+              <p class="text-gray-600 text-sm">Natural language processing for automatic ideas, plots, and dialogue generation.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <h4 class="font-bold text-lg mb-4">🎨 Image & Comic Generation</h4>
+              <p class="text-gray-600 text-sm">AI visual for character illustrations and comic panels with high consistency.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <h4 class="font-bold text-lg mb-4">📐 Panel Layout Automation</h4>
+              <p class="text-gray-600 text-sm">AI and computer vision for consistent and responsive comic grids.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <h4 class="font-bold text-lg mb-4">🎬 Video & Narration</h4>
+              <p class="text-gray-600 text-sm">Text-to-speech and visual sequencing for multi-format storytelling.</p>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-[#00D564]/10 to-[#00a549]/10 p-8 rounded-lg border border-[#00D564]/30 mb-8">
+            <h4 class="font-bold text-lg mb-4">🚀 AI & Compute Stack</h4>
+            <div class="grid md:grid-cols-3 gap-6">
+              <div>
+                <p class="font-semibold mb-2">Generative AI</p>
+                <p class="text-sm text-gray-600">Text, image, and video generation models</p>
+              </div>
+              <div>
+                <p class="font-semibold mb-2">Computer Vision</p>
+                <p class="text-sm text-gray-600">Panel detection, layout optimization, image analysis</p>
+              </div>
+              <div>
+                <p class="font-semibold mb-2">GPU Acceleration</p>
+                <p class="text-sm text-gray-600">NVIDIA GPUs for optimal inference and training</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-blue-50 p-8 rounded-lg border border-blue-200">
+            <p class="text-sm text-gray-700"><span class="font-bold">💡 NVIDIA Ecosystem Ready:</span> MamaStoria is designed to optimally leverage GPU acceleration for inference, image generation, and video processing — aligned with the NVIDIA ecosystem.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Infrastructure -->
+      <section class="max-w-[1200px] mx-auto px-4 py-20">
+        <h3 class="text-2xl font-bold mb-6">Infrastructure & DevOps</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <h4 class="font-bold text-lg mb-4">☁️ Cloud Infrastructure</h4>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3">
+                <span class="text-[#00D564]">•</span>
+                <span>Google Cloud Platform (primary)</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="text-[#00D564]">•</span>
+                <span>Kubernetes for container orchestration</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="text-[#00D564]">•</span>
+                <span>Cloud Run for serverless functions</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="text-[#00D564]">•</span>
+                <span>Cloud CDN for global distribution</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <h4 class="font-bold text-lg mb-4">🔧 CI/CD & Monitoring</h4>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3">
+                <span class="text-[#00D564]">•</span>
+                <span>GitHub Actions for automation</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="text-[#00D564]">•</span>
+                <span>Automated testing & staging</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="text-[#00D564]">•</span>
+                <span>Datadog for monitoring & logging</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="text-[#00D564]">•</span>
+                <span>PagerDuty for incident response</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Security -->
+      <section class="max-w-[1200px] mx-auto px-4 py-20">
+        <h3 class="text-2xl font-bold mb-6">Security & Compliance</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-gradient-to-br from-[#00D564]/10 to-[#00D564]/5 p-6 rounded-lg border border-[#00D564]/20">
+            <h4 class="font-bold text-lg mb-4">🔒 Data Protection</h4>
+            <ul class="space-y-2 text-sm">
+              <li>✓ End-to-end encryption for sensitive data</li>
+              <li>✓ HTTPS/TLS for all communications</li>
+              <li>✓ Database encryption at rest</li>
+              <li>✓ Regular security audits & penetration testing</li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-br from-[#00D564]/10 to-[#00D564]/5 p-6 rounded-lg border border-[#00D564]/20">
+            <h4 class="font-bold text-lg mb-4">📋 Compliance</h4>
+            <ul class="space-y-2 text-sm">
+              <li>✓ GDPR compliant data handling</li>
+              <li>✓ SOC 2 Type II certified</li>
+              <li>✓ COPPA & CCPA compliance</li>
+              <li>✓ Transparent privacy policies</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Scalability -->
+      <section class="bg-gray-50 py-20 px-4">
+        <div class="max-w-[1200px] mx-auto">
+          <h3 class="text-2xl font-bold mb-6">Scalability & Performance Metrics</h3>
+          <div class="grid md:grid-cols-4 gap-6 text-center">
+            <div class="bg-white p-6 rounded-lg border border-gray-200">
+              <p class="text-3xl font-bold text-[#00D564] mb-2">99.99%</p>
+              <p class="text-sm text-gray-600">Uptime SLA</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg border border-gray-200">
+              <p class="text-3xl font-bold text-[#00D564] mb-2">&lt; 100ms</p>
+              <p class="text-sm text-gray-600">API Response Time</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg border border-gray-200">
+              <p class="text-3xl font-bold text-[#00D564] mb-2">1M+</p>
+              <p class="text-sm text-gray-600">Req/min Capacity</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg border border-gray-200">
+              <p class="text-3xl font-bold text-[#00D564] mb-2">Auto</p>
+              <p class="text-sm text-gray-600">Horizontal Scaling</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Innovation -->
+      <section class="max-w-[1000px] mx-auto px-4 py-20">
+        <h2 class="text-3xl font-bold mb-8 text-center">Technology Roadmap</h2>
+        <div class="space-y-6">
+          <div class="border-l-4 border-[#00D564] pl-6">
+            <h4 class="font-bold text-lg">Q1 2024: Advanced Personalization</h4>
+            <p class="text-gray-600 mt-2">Implementing GPT-4 integration for smarter recommendations and content summaries.</p>
+          </div>
+          <div class="border-l-4 border-[#00D564] pl-6">
+            <h4 class="font-bold text-lg">Q2 2024: Mobile App Launch</h4>
+            <p class="text-gray-600 mt-2">Native iOS and Android apps with offline reading capabilities.</p>
+          </div>
+          <div class="border-l-4 border-[#00D564] pl-6">
+            <h4 class="font-bold text-lg">Q3 2024: Creator Tools Enhancement</h4>
+            <p class="text-gray-600 mt-2">Advanced analytics dashboard and monetization optimization tools.</p>
+          </div>
+          <div class="border-l-4 border-[#00D564] pl-6">
+            <h4 class="font-bold text-lg">Q4 2024: Global Expansion</h4>
+            <p class="text-gray-600 mt-2">Multi-language support and regional content delivery networks.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="bg-[#111827] text-gray-300 py-12">
+      <div class="max-w-[1400px] mx-auto px-4 text-center">
+        <p>&copy; 2024 MamaStoria. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Creator Studio - MamaStoria</title>
+    <link rel="icon" type="image/png" href="src/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    
+    <!-- ==================== HEADER ==================== -->
+    <header class="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 z-50 shadow-sm">
+      <div class="max-w-[1400px] mx-auto px-4 py-4 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2 text-lg font-bold hover:text-[#00D564] transition">
+          <i class="fas fa-arrow-left"></i>
+          <img src="src/mamastoria-large.png" alt="MamaStoria" class="h-10 w-auto object-contain">
+        </a>
+        <h1 class="text-2xl font-bold hidden md:block">Creator Studio</h1>
+        <div class="flex items-center gap-4">
+          <a href="about.html" class="text-sm text-gray-600 hover:text-[#00D564] transition">Documentation</a>
+          <button class="p-2 rounded-lg hover:bg-gray-100 transition">
+            <i class="fas fa-bell text-lg"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="pt-24 pb-12">
+      <div class="max-w-[1400px] mx-auto px-4">
+
+        <!-- ==================== DASHBOARD TABS ==================== -->
+        <div class="flex gap-4 mb-8 border-b border-gray-200 overflow-x-auto">
+          <button class="studio-tab active px-4 py-3 border-b-2 border-[#00D564] font-semibold text-sm whitespace-nowrap" data-tab="dashboard">
+            <i class="fas fa-chart-line mr-2"></i>Dashboard
+          </button>
+          <button class="studio-tab px-4 py-3 border-b-2 border-transparent font-semibold text-sm hover:text-[#00D564] transition whitespace-nowrap" data-tab="works">
+            <i class="fas fa-book mr-2"></i>My Works
+          </button>
+          <button class="studio-tab px-4 py-3 border-b-2 border-transparent font-semibold text-sm hover:text-[#00D564] transition whitespace-nowrap" data-tab="upload">
+            <i class="fas fa-cloud-upload-alt mr-2"></i>Upload New
+          </button>
+          <button class="studio-tab px-4 py-3 border-b-2 border-transparent font-semibold text-sm hover:text-[#00D564] transition whitespace-nowrap" data-tab="analytics">
+            <i class="fas fa-chart-bar mr-2"></i>Analytics
+          </button>
+          <button class="studio-tab px-4 py-3 border-b-2 border-transparent font-semibold text-sm hover:text-[#00D564] transition whitespace-nowrap" data-tab="monetization">
+            <i class="fas fa-coins mr-2"></i>Monetization
+          </button>
+        </div>
+
+        <!-- ==================== DASHBOARD TAB ==================== -->
+        <section id="dashboardTab" class="studio-content active">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <!-- Stats Cards -->
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-sm text-gray-600 mb-2">Total Views</p>
+                  <p class="text-3xl font-bold text-gray-900">48.3K</p>
+                </div>
+                <i class="fas fa-eye text-4xl text-gray-200"></i>
+              </div>
+              <p class="text-xs text-gray-500 mt-2">+12% from last month</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-sm text-gray-600 mb-2">Subscribers</p>
+                  <p class="text-3xl font-bold text-gray-900">892</p>
+                </div>
+                <i class="fas fa-users text-4xl text-gray-200"></i>
+              </div>
+              <p class="text-xs text-gray-500 mt-2">+24 this week</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-sm text-gray-600 mb-2">Earnings</p>
+                  <p class="text-3xl font-bold text-[#00D564]">$342.50</p>
+                </div>
+                <i class="fas fa-dollar-sign text-4xl text-gray-200"></i>
+              </div>
+              <p class="text-xs text-gray-500 mt-2">This month</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-sm text-gray-600 mb-2">Published</p>
+                  <p class="text-3xl font-bold text-gray-900">5</p>
+                </div>
+                <i class="fas fa-book-open text-4xl text-gray-200"></i>
+              </div>
+              <p class="text-xs text-gray-500 mt-2">Active works</p>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 mb-8">
+            <h2 class="text-lg font-bold mb-4">Quick Actions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <button class="p-4 border-2 border-[#00D564] border-dashed rounded-lg hover:bg-[#00D564]/5 transition text-center">
+                <i class="fas fa-upload text-2xl text-[#00D564] mb-2 block"></i>
+                <p class="font-semibold">Upload Episode</p>
+                <p class="text-xs text-gray-500 mt-1">Add new content to your works</p>
+              </button>
+              <button class="p-4 border-2 border-gray-200 rounded-lg hover:border-[#00D564] transition text-center">
+                <i class="fas fa-pen-nib text-2xl text-gray-600 mb-2 block"></i>
+                <p class="font-semibold">Create New Series</p>
+                <p class="text-xs text-gray-500 mt-1">Start a new creative project</p>
+              </button>
+              <button class="p-4 border-2 border-gray-200 rounded-lg hover:border-[#00D564] transition text-center">
+                <i class="fas fa-cog text-2xl text-gray-600 mb-2 block"></i>
+                <p class="font-semibold">Settings</p>
+                <p class="text-xs text-gray-500 mt-1">Manage your creator profile</p>
+              </button>
+            </div>
+          </div>
+
+          <!-- Recent Activity -->
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+            <h2 class="text-lg font-bold mb-4">Recent Activity</h2>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                <div>
+                  <p class="font-semibold">Episode 5 uploaded</p>
+                  <p class="text-sm text-gray-500">to "The Last Hero"</p>
+                </div>
+                <p class="text-xs text-gray-500">2 hours ago</p>
+              </div>
+              <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                <div>
+                  <p class="font-semibold">Reached 1000 subscribers</p>
+                  <p class="text-sm text-gray-500">on "The Last Hero"</p>
+                </div>
+                <p class="text-xs text-gray-500">Yesterday</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== MY WORKS TAB ==================== -->
+        <section id="worksTab" class="studio-content hidden">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition">
+              <div class="aspect-video bg-gradient-to-br from-blue-400 to-blue-600"></div>
+              <div class="p-4">
+                <h3 class="font-bold mb-1">The Last Hero</h3>
+                <p class="text-xs text-gray-500 mb-3">32 episodes • 1.2K subscribers</p>
+                <div class="flex gap-2">
+                  <button class="flex-1 px-3 py-2 text-xs bg-[#00D564] text-white rounded hover:bg-[#00c255] transition">Edit</button>
+                  <button class="flex-1 px-3 py-2 text-xs border border-gray-300 rounded hover:bg-gray-50 transition">View</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition">
+              <div class="aspect-video bg-gradient-to-br from-purple-400 to-purple-600"></div>
+              <div class="p-4">
+                <h3 class="font-bold mb-1">Whispers in the Dark</h3>
+                <p class="text-xs text-gray-500 mb-3">18 episodes • 890 subscribers</p>
+                <div class="flex gap-2">
+                  <button class="flex-1 px-3 py-2 text-xs bg-[#00D564] text-white rounded hover:bg-[#00c255] transition">Edit</button>
+                  <button class="flex-1 px-3 py-2 text-xs border border-gray-300 rounded hover:bg-gray-50 transition">View</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition">
+              <div class="aspect-video bg-gradient-to-br from-pink-400 to-pink-600"></div>
+              <div class="p-4">
+                <h3 class="font-bold mb-1">Love in Seoul</h3>
+                <p class="text-xs text-gray-500 mb-3">25 episodes • 670 subscribers</p>
+                <div class="flex gap-2">
+                  <button class="flex-1 px-3 py-2 text-xs bg-[#00D564] text-white rounded hover:bg-[#00c255] transition">Edit</button>
+                  <button class="flex-1 px-3 py-2 text-xs border border-gray-300 rounded hover:bg-gray-50 transition">View</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== UPLOAD TAB ==================== -->
+        <section id="uploadTab" class="studio-content hidden">
+          <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
+            <h2 class="text-lg font-bold mb-6">Upload New Work</h2>
+            
+            <form class="space-y-6">
+              <!-- Series Selection / Creation -->
+              <div>
+                <label class="block text-sm font-semibold mb-2">Series</label>
+                <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00D564]">
+                  <option>Select existing series...</option>
+                  <option>The Last Hero</option>
+                  <option>Whispers in the Dark</option>
+                </select>
+              </div>
+
+              <!-- Episode Title -->
+              <div>
+                <label class="block text-sm font-semibold mb-2">Episode Title</label>
+                <input type="text" placeholder="e.g., Episode 1: The Beginning" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00D564]">
+              </div>
+
+              <!-- Episode Description -->
+              <div>
+                <label class="block text-sm font-semibold mb-2">Description</label>
+                <textarea placeholder="Describe this episode..." rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00D564]"></textarea>
+              </div>
+
+              <!-- File Upload -->
+              <div>
+                <label class="block text-sm font-semibold mb-2">Upload Images</label>
+                <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-[#00D564] transition cursor-pointer">
+                  <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-2 block"></i>
+                  <p class="font-semibold mb-1">Drop files here or click to browse</p>
+                  <p class="text-xs text-gray-500">Support JPG, PNG up to 50MB each</p>
+                </div>
+              </div>
+
+              <!-- Monetization Options -->
+              <div>
+                <label class="block text-sm font-semibold mb-3">Monetization</label>
+                <div class="space-y-3">
+                  <label class="flex items-center gap-3 p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50">
+                    <input type="radio" name="monetization" value="free" checked class="w-4 h-4">
+                    <div>
+                      <p class="font-semibold text-sm">Free</p>
+                      <p class="text-xs text-gray-500">Everyone can read</p>
+                    </div>
+                  </label>
+                  <label class="flex items-center gap-3 p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50">
+                    <input type="radio" name="monetization" value="wuf" class="w-4 h-4">
+                    <div>
+                      <p class="font-semibold text-sm">Wait to Unlock (WUF)</p>
+                      <p class="text-xs text-gray-500">Unlock after 24 hours or pay</p>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Publishing Consent -->
+              <div class="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                  <input type="checkbox" required class="mt-1 w-4 h-4 border-gray-300 rounded">
+                  <span>
+                    By publishing, I confirm I have the rights to this content and allow AI processing for formatting, recommendations, and moderation. I agree to the
+                    <a href="terms.html" class="text-[#00D564] font-semibold hover:underline">Terms & Conditions</a>
+                    and acknowledge the
+                    <a href="ai-disclaimer.html" class="text-[#00D564] font-semibold hover:underline">AI Usage Disclaimer</a>.
+                  </span>
+                </label>
+              </div>
+
+              <!-- Submit -->
+              <div class="flex gap-4 pt-4">
+                <button type="submit" class="flex-1 px-6 py-3 bg-[#00D564] text-white font-semibold rounded-lg hover:bg-[#00c255] transition">
+                  Publish Episode
+                </button>
+                <button type="button" class="flex-1 px-6 py-3 border border-gray-300 font-semibold rounded-lg hover:bg-gray-50 transition">
+                  Save as Draft
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- ==================== ANALYTICS TAB ==================== -->
+        <section id="analyticsTab" class="studio-content hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <h2 class="text-lg font-bold mb-4">Views Over Time</h2>
+              <div class="h-64 bg-gradient-to-br from-gray-100 to-gray-50 rounded flex items-center justify-center">
+                <p class="text-gray-500">Chart visualization would go here</p>
+              </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <h2 class="text-lg font-bold mb-4">Top Performing</h2>
+              <div class="space-y-4">
+                <div class="p-3 bg-gray-50 rounded-lg">
+                  <p class="text-sm font-semibold">Episode 5</p>
+                  <p class="text-xs text-gray-500">1,234 views</p>
+                </div>
+                <div class="p-3 bg-gray-50 rounded-lg">
+                  <p class="text-sm font-semibold">Episode 3</p>
+                  <p class="text-xs text-gray-500">892 views</p>
+                </div>
+                <div class="p-3 bg-gray-50 rounded-lg">
+                  <p class="text-sm font-semibold">Episode 1</p>
+                  <p class="text-xs text-gray-500">756 views</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== MONETIZATION TAB ==================== -->
+        <section id="monetizationTab" class="studio-content hidden">
+          <div class="max-w-2xl">
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 mb-6">
+              <h2 class="text-lg font-bold mb-4">Revenue & Payouts</h2>
+              <div class="space-y-4">
+                <div class="flex justify-between p-4 bg-gray-50 rounded-lg">
+                  <span>Pending Balance</span>
+                  <span class="font-bold text-lg">$185.30</span>
+                </div>
+                <div class="flex justify-between p-4 bg-gray-50 rounded-lg">
+                  <span>Lifetime Earnings</span>
+                  <span class="font-bold text-lg text-[#00D564]">$2,842.50</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <h2 class="text-lg font-bold mb-4">Payout Settings</h2>
+              <form class="space-y-4">
+                <div>
+                  <label class="block text-sm font-semibold mb-2">Bank Account</label>
+                  <input type="text" placeholder="Add your bank account" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00D564]">
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold mb-2">PayPal Email</label>
+                  <input type="email" placeholder="your@email.com" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00D564]">
+                </div>
+                <button class="px-6 py-2 bg-[#00D564] text-white font-semibold rounded-lg hover:bg-[#00c255] transition">
+                  Update Settings
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <script src="src/creator-studio.js"></script>
+  </body>
+</html>

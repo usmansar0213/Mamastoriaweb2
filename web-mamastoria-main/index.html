@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MamaStoria - Webtoons & Comics</title>
+    <link rel="icon" type="image/png" href="src/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body class="bg-white text-gray-900">
+    
+    <!-- ==================== HEADER / MAIN NAVIGATION ==================== -->
+    <header class="fixed top-0 left-0 right-0 bg-white border-b border-gray-100 z-50 shadow-sm">
+      <div class="max-w-[1400px] mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+          
+          <!-- Left: Logo -->
+          <div class="flex-shrink-0 flex items-center gap-3">
+            <a href="index.html" class="flex items-center" title="MamaStoria Home">
+              <img src="src/mamastoria-large.png" alt="MamaStoria" class="h-10 w-auto object-contain">
+            </a>
+            <div class="hidden sm:flex items-center gap-2 pl-3 border-l border-gray-300">
+              <img 
+                src="src/nvidia-inception-logo.png" 
+                alt="NVIDIA Inception" 
+                class="h-10 object-contain"
+                title="NVIDIA Inception Program"
+              >
+              <img 
+                src="src/google-startup-logo.jpg" 
+                alt="Google for Startups" 
+                class="h-10 object-contain"
+                title="Google for Startups"
+              >
+            </div>
+          </div>
+          
+          <!-- Center: Main Navigation (Desktop) -->
+          <nav class="hidden lg:flex items-center gap-8 flex-1 justify-center text-sm font-semibold text-gray-700">
+            <div class="nav-reader flex gap-8">
+              <a href="#" class="nav-link hover:text-[#00D564] transition" data-section="comics">
+                <i class="fas fa-book mr-2"></i>Comics
+              </a>
+              <a href="explore.html" class="nav-link hover:text-[#00D564] transition">
+                <i class="fas fa-compass mr-2"></i>Explore
+              </a>
+              <a href="#" class="nav-link hover:text-[#00D564] transition" data-section="community">
+                <i class="fas fa-users mr-2"></i>Community
+              </a>
+            </div>
+            <div class="nav-creator hidden flex-col lg:flex-row gap-4 lg:gap-8">
+              <a href="creator-studio.html" class="nav-link hover:text-[#00D564] transition">
+                <i class="fas fa-pen-nib mr-2"></i>Dashboard
+              </a>
+              <a href="creator-studio.html?tab=upload" class="nav-link hover:text-[#00D564] transition">
+                <i class="fas fa-cloud-upload-alt mr-2"></i>Upload
+              </a>
+              <a href="creator-studio.html?tab=analytics" class="nav-link hover:text-[#00D564] transition">
+                <i class="fas fa-chart-line mr-2"></i>Analytics
+              </a>
+            </div>
+          </nav>
+
+          <!-- Right: Search, Publish, Login -->
+          <div class="flex items-center gap-4">
+            <!-- Search Bar (Icon) -->
+            <button id="searchToggle" class="p-2 rounded-lg hover:bg-gray-100 transition" title="Search">
+              <i class="fas fa-search text-gray-600 text-lg"></i>
+            </button>
+
+            <!-- Publish Button (Creator Entry Point) -->
+            <button id="publishBtn" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-[#00D564] text-white text-sm font-semibold rounded-lg hover:bg-[#00c255] transition">
+              <i class="fas fa-upload"></i>
+              <span class="hidden md:inline">Publish</span>
+            </button>
+
+            <!-- User Avatar / Login -->
+            <div class="flex items-center gap-3">
+              <!-- Role Toggle (Developer Feature) -->
+              <label class="flex items-center gap-2 px-2 py-1 text-xs bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200 transition">
+                <i class="fas fa-theater-masks"></i>
+                <input type="checkbox" id="roleToggle" class="w-4 h-4">
+                <span>Creator</span>
+              </label>
+              
+              <button id="userBtn" class="p-2 rounded-lg hover:bg-gray-100 transition" title="Account">
+                <i class="fas fa-user-circle text-gray-600 text-2xl"></i>
+              </button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobileMenuToggle" class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition">
+              <i class="fas fa-bars text-lg"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Search Bar (Full Width - Hidden) -->
+        <div id="searchBar" class="hidden mt-4 pb-4 border-t border-gray-100">
+          <div class="relative">
+            <i class="fas fa-search absolute left-4 top-3 text-gray-400"></i>
+            <input 
+              type="text" 
+              id="searchInput" 
+              placeholder="Search series, creators, genres..." 
+              class="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00D564] focus:border-transparent transition"
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu (Hidden) -->
+      <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-100 bg-white">
+        <nav class="flex flex-col divide-y divide-gray-100 px-4 py-2">
+          <a href="#" class="nav-link py-3 text-gray-700 hover:text-[#00D564]" data-section="comics">
+            <i class="fas fa-book mr-2"></i>Comics
+          </a>
+          <a href="explore.html" class="py-3 text-gray-700 hover:text-[#00D564]">
+            <i class="fas fa-compass mr-2"></i>Explore
+          </a>
+          <a href="#" class="nav-link py-3 text-gray-700 hover:text-[#00D564]" data-section="community">
+            <i class="fas fa-users mr-2"></i>Community
+          </a>
+          <a href="creator-studio.html" class="py-3 text-gray-700 hover:text-[#00D564]">
+            <i class="fas fa-pen-nib mr-2"></i>Creator Studio
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ==================== SECONDARY DISCOVERY NAVIGATION ==================== -->
+    <nav class="sticky top-[76px] left-0 right-0 bg-white border-b border-gray-100 z-40 overflow-x-auto">
+      <div class="max-w-[1400px] mx-auto px-4 flex gap-4 text-sm font-semibold whitespace-nowrap">
+        <a href="index.html" class="py-4 px-4 border-b-2 border-[#00D564] text-[#00D564] hover:text-[#00D564] transition">
+          Spotlight
+        </a>
+        <a href="daily.html" class="py-4 px-4 border-b-2 border-transparent text-gray-600 hover:text-[#00D564] transition">
+          Daily Pass
+        </a>
+        <a href="index.html" class="py-4 px-4 border-b-2 border-transparent text-gray-600 hover:text-[#00D564] transition">
+          New
+        </a>
+        <a href="popular.html" class="py-4 px-4 border-b-2 border-transparent text-gray-600 hover:text-[#00D564] transition">
+          Popular
+        </a>
+        <a href="index.html" class="py-4 px-4 border-b-2 border-transparent text-gray-600 hover:text-[#00D564] transition">
+          Free / WUF
+        </a>
+        <a href="explore.html" class="py-4 px-4 border-b-2 border-transparent text-gray-600 hover:text-[#00D564] transition">
+          <i class="fas fa-tags mr-2"></i>Explore Tags
+        </a>
+      </div>
+    </nav>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="pt-[140px] pb-32 lg:pb-0">
+      <div class="max-w-[1400px] mx-auto px-4">
+
+        <!-- ==================== HERO CAROUSEL ==================== -->
+        <section class="mb-12">
+          <div class="relative w-full h-[250px] md:h-[400px] lg:h-[450px] rounded-xl overflow-hidden bg-gray-200">
+            <div id="carouselContainer" class="relative w-full h-full">
+              <img id="carouselImage" src="" alt="Featured" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6">
+                <h2 id="carouselTitle" class="text-2xl md:text-4xl font-bold text-white mb-2"></h2>
+                <p id="carouselAuthor" class="text-gray-100 mb-4"></p>
+                <button onclick="window.location.href='detail.html?id=' + carouselData[carouselIndex].id" class="w-fit px-6 py-2 bg-[#00D564] text-white font-semibold rounded-lg hover:bg-[#00c255] transition">
+                  Read Now
+                </button>
+              </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button id="carouselPrev" class="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 bg-white/80 hover:bg-white rounded-full flex items-center justify-center transition">
+              <i class="fas fa-chevron-left text-gray-900"></i>
+            </button>
+            <button id="carouselNext" class="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 bg-white/80 hover:bg-white rounded-full flex items-center justify-center transition">
+              <i class="fas fa-chevron-right text-gray-900"></i>
+            </button>
+
+            <!-- Carousel Indicators -->
+            <div id="carouselIndicators" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10"></div>
+          </div>
+        </section>
+
+        <!-- ==================== PERSONALIZED RAILS ==================== -->
+        <!-- Continue Reading -->
+        <section id="continueReadingSection" class="mb-12" style="display: none;">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-2xl font-bold text-gray-900">
+              <i class="fas fa-bookmark mr-3 text-[#00D564]"></i>Continue Reading
+            </h2>
+            <a href="#" class="text-[#00D564] font-semibold hover:underline">View All</a>
+          </div>
+          <div id="continueReadingRail" class="horizontal-scroll-container"></div>
+        </section>
+
+        <!-- Recommended For You -->
+        <section id="recommendedSection" class="mb-12" style="display: none;">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-2xl font-bold text-gray-900">
+              <i class="fas fa-sparkles mr-3 text-[#FFA500]"></i>Recommended For You
+            </h2>
+            <a href="#" class="text-[#00D564] font-semibold hover:underline">Personalization Settings</a>
+          </div>
+          <div id="recommendedRail" class="horizontal-scroll-container"></div>
+        </section>
+
+        <!-- ==================== EDITOR'S CHOICE / STAFF PICKS ==================== -->
+        <section class="mb-12">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-2xl font-bold text-gray-900">
+              <i class="fas fa-star mr-3 text-red-500"></i>Editor's Choice
+            </h2>
+            <span class="text-xs font-semibold px-3 py-1 bg-red-100 text-red-700 rounded-full">Curated by our team</span>
+          </div>
+          <div id="staffPicksRail" class="horizontal-scroll-container"></div>
+        </section>
+
+        <!-- ==================== ALGORITHMIC RAILS ==================== -->
+        <!-- New Today -->
+        <section class="mb-12">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-2xl font-bold text-gray-900">
+              <i class="fas fa-bolt mr-3 text-yellow-500"></i>New Today
+            </h2>
+            <a href="explore.html?sort=newest" class="text-[#00D564] font-semibold hover:underline">See more</a>
+          </div>
+          <div id="newComicsRail" class="horizontal-scroll-container"></div>
+        </section>
+
+        <!-- Trending -->
+        <section class="mb-12">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-2xl font-bold text-gray-900">
+              <i class="fas fa-fire mr-3 text-orange-500"></i>Trending Now
+            </h2>
+            <a href="explore.html?sort=trending" class="text-[#00D564] font-semibold hover:underline">See trending</a>
+          </div>
+          <div id="trendingRail" class="horizontal-scroll-container"></div>
+        </section>
+
+        <!-- Free & WUF -->
+        <section class="mb-12">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-2xl font-bold text-gray-900">
+              <i class="fas fa-gift mr-3 text-purple-500"></i>Free & Wait to Unlock
+            </h2>
+            <a href="explore.html?filter=free" class="text-[#00D564] font-semibold hover:underline">Browse all</a>
+          </div>
+          <div id="freeRail" class="horizontal-scroll-container"></div>
+        </section>
+
+        <!-- Completed -->
+        <section class="mb-12">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-2xl font-bold text-gray-900">
+              <i class="fas fa-check-circle mr-3 text-green-500"></i>Completed & Finished
+            </h2>
+            <a href="explore.html?filter=completed" class="text-[#00D564] font-semibold hover:underline">Explore</a>
+          </div>
+          <div id="completedRail" class="horizontal-scroll-container"></div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- ==================== MOBILE BOTTOM NAVIGATION ==================== -->
+    <nav id="mobileBottomNav" class="fixed bottom-0 left-0 right-0 lg:hidden bg-white border-t border-gray-200 z-40">
+      <div class="flex items-center justify-around">
+        <a href="index.html" class="flex flex-col items-center justify-center gap-1 py-3 px-6 text-[#00D564] font-semibold">
+          <i class="fas fa-home text-xl"></i>
+          <span class="text-xs">Home</span>
+        </a>
+        <a href="explore.html" class="flex flex-col items-center justify-center gap-1 py-3 px-6 text-gray-600 hover:text-[#00D564] transition">
+          <i class="fas fa-compass text-xl"></i>
+          <span class="text-xs">Explore</span>
+        </a>
+        <a href="#" class="flex flex-col items-center justify-center gap-1 py-3 px-6 text-gray-600 hover:text-[#00D564] transition">
+          <i class="fas fa-bookmark text-xl"></i>
+          <span class="text-xs">Library</span>
+        </a>
+        <a href="#" class="flex flex-col items-center justify-center gap-1 py-3 px-6 text-gray-600 hover:text-[#00D564] transition">
+          <i class="fas fa-user text-xl"></i>
+          <span class="text-xs">Profile</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-[#111827] text-gray-300 mt-16 pt-12 pb-20 lg:pb-12">
+      <div class="max-w-[1400px] mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+          <!-- Company -->
+          <div>
+            <h4 class="font-bold text-white mb-4">MamaStoria</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a href="about.html" class="hover:text-[#00D564] transition">About Us</a></li>
+              <li><a href="team.html" class="hover:text-[#00D564] transition">Team</a></li>
+              <li><a href="technology.html" class="hover:text-[#00D564] transition">Technology</a></li>
+              <li><a href="contact.html" class="hover:text-[#00D564] transition">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Creators -->
+          <div>
+            <h4 class="font-bold text-white mb-4">For Creators</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a href="creator-studio.html" class="hover:text-[#00D564] transition">Creator Dashboard</a></li>
+              <li><a href="#" class="hover:text-[#00D564] transition">Creator Guidelines</a></li>
+              <li><a href="#" class="hover:text-[#00D564] transition">Monetization</a></li>
+              <li><a href="#" class="hover:text-[#00D564] transition">Support</a></li>
+            </ul>
+          </div>
+
+          <!-- Readers -->
+          <div>
+            <h4 class="font-bold text-white mb-4">For Readers</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#" class="hover:text-[#00D564] transition">Browse All</a></li>
+              <li><a href="explore.html" class="hover:text-[#00D564] transition">Explore Tags</a></li>
+              <li><a href="#" class="hover:text-[#00D564] transition">Reading List</a></li>
+              <li><a href="#" class="hover:text-[#00D564] transition">Recommendations</a></li>
+            </ul>
+          </div>
+
+          <!-- Legal -->
+          <div>
+            <h4 class="font-bold text-white mb-4">Legal</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a href="terms.html" class="hover:text-[#00D564] transition">Terms & Conditions</a></li>
+              <li><a href="privacy.html" class="hover:text-[#00D564] transition">Privacy Policy</a></li>
+              <li><a href="cookies.html" class="hover:text-[#00D564] transition">Cookie Policy</a></li>
+              <li><a href="content-policy.html" class="hover:text-[#00D564] transition">Content Policy</a></li>
+              <li><a href="ai-disclaimer.html" class="hover:text-[#00D564] transition">AI Disclaimer</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="bg-gradient-to-r from-[#00D564] to-[#00a549] rounded-lg p-8 mb-8 text-center">
+          <h3 class="text-white text-2xl font-bold mb-2">Become a Creator</h3>
+          <p class="text-white/90 mb-4">Share your stories with millions. Start earning today.</p>
+          <a href="creator-studio.html" class="inline-block px-6 py-3 bg-white text-[#00D564] font-semibold rounded-lg hover:bg-gray-100 transition">
+            Get Started
+          </a>
+        </div>
+
+        <!-- Bottom -->
+        <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row items-center justify-between">
+          <p class="text-sm text-gray-400 mb-4 md:mb-0">© 2024 MamaStoria. All rights reserved.</p>
+          <div class="flex gap-4">
+            <a href="#" class="hover:text-[#00D564] transition"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="hover:text-[#00D564] transition"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="hover:text-[#00D564] transition"><i class="fab fa-discord"></i></a>
+            <a href="#" class="hover:text-[#00D564] transition"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Runtime Config -->
+    <script>
+      window.API_BASE = "https://nanobanana-backend-1089713441636.us-central1.run.app/api/v1/";
+    </script>
+    <script src="src/main.js"></script>
+  </body>
+</html>

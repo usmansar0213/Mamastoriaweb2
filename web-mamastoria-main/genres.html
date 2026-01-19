@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MamaStoria - Genres</title>
+    <link rel="icon" type="image/png" href="src/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body class="bg-white">
+    
+    <!-- Main Header -->
+    <header class="bg-white sticky top-0 z-50 h-[70px] flex items-center shadow-sm">
+      <div class="max-w-[1280px] w-full mx-auto px-4 flex justify-between items-center">
+        <!-- Input Left: Logo + Desktop Menu -->
+        <div class="flex items-center gap-10">
+            <!-- WEBTOON Logo Icon -->
+           <a href="index.html" class="flex items-center">
+              <img src="src/mamastoria-large.png" alt="MamaStoria" class="h-12 w-auto object-contain">
+           </a>
+           
+           <!-- Desktop Nav -->
+           <nav class="hidden lg:flex items-center gap-8 text-sm font-bold uppercase text-gray-900 tracking-wide">
+              <a href="index.html" class="nav-link hover:text-[#00D564]" data-nav="daily">Daily</a>
+              <a href="genres.html" class="nav-link hover:text-[#00D564]" data-nav="genres">Genres</a>
+              <a href="popular.html" class="nav-link hover:text-[#00D564]" data-nav="popular">Popular</a>
+              <a href="creators.html" class="nav-link hover:text-[#00D564]" data-nav="creators">Creators</a>
+           </nav>
+        </div>
+
+        <!-- Right: Search, Publish, Login -->
+        <div class="flex items-center gap-4">
+           <!-- Search Button -->
+           
+           <!-- Download APK Button -->
+           <a href="https://play.google.com/store/apps" target="_blank" class="hidden sm:flex items-center gap-2 text-xs font-bold bg-white border border-gray-300 px-4 py-2 rounded-full hover:bg-gray-50 transition">
+              Download App
+           </a>
+
+           <button id="searchBtn" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100">
+               <i class="fas fa-search text-gray-600"></i>
+           </button>
+           
+           <!-- Mobile Menu Toggle -->
+           <button id="mobileMenuBtn" class="lg:hidden w-8 h-8 flex items-center justify-center">
+               <i class="fas fa-bars text-xl"></i>
+           </button>
+        </div>
+      </div>
+
+      <!-- Search Bar (Hidden) -->
+      <div id="searchContainer" class="hidden absolute top-[100%] left-0 w-full bg-white border-b border-gray-100 py-4 shadow-sm z-40 transition-all">
+          <div class="max-w-[800px] mx-auto px-4 relative">
+             <input type="text" id="searchInput" placeholder="Search series, creators..." class="w-full bg-gray-100 border-none rounded-full px-5 py-3 pl-12 text-sm focus:outline-none focus:ring-2 focus:ring-[#00D564] transition-all">
+             <i class="fas fa-search absolute left-8 top-1/2 -translate-y-1/2 text-gray-400"></i>
+          </div>
+      </div>
+      
+       <!-- Mobile Menu (Hidden) -->
+       <div id="mobileMenu" class="hidden absolute top-[100%] left-0 w-full bg-white border-b border-gray-200 z-50 lg:hidden shadow-lg">
+           <nav class="flex flex-col text-sm font-bold uppercase text-gray-900 tracking-wide">
+               <a href="index.html" class="nav-link border-t border-gray-100 py-4 px-6 hover:bg-gray-50 hover:text-[#00D564]" data-nav="daily">Daily</a>
+               <a href="genres.html" class="nav-link border-t border-gray-100 py-4 px-6 hover:bg-gray-50 hover:text-[#00D564]" data-nav="genres">Genres</a>
+               <a href="popular.html" class="nav-link border-t border-gray-100 py-4 px-6 hover:bg-gray-50 hover:text-[#00D564]" data-nav="popular">Popular</a>
+               <a href="creators.html" class="nav-link border-t border-gray-100 py-4 px-6 hover:bg-gray-50 hover:text-[#00D564]" data-nav="creators">Creators</a>
+           </nav>
+       </div>
+    </header>
+
+    <div class="border-b border-gray-100 bg-white hidden">
+    </div>
+
+    <main class="max-w-[1280px] mx-auto px-4 pt-0 pb-20 space-y-12">
+      
+      <!-- Search Results Section -->
+      <section id="section-search" class="content-section hidden">
+          <div class="flex items-center justify-between mb-4">
+              <h2 class="text-xl font-bold">Search Results</h2>
+              <button id="closeSearchBtn" class="text-xs font-bold text-gray-400 hover:text-black flex items-center gap-1">
+                  Close Search <i class="fas fa-times text-[10px]"></i>
+              </button>
+          </div>
+          <div id="searchGrid" class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-8">
+              <!-- JS Injected -->
+          </div>
+      </section>
+
+      <!-- Daily Schedule Section (Removed) -->
+      <!-- Newly Released Originals (Removed) -->
+      <!-- Ranking Section (Removed) -->
+
+      <!-- Category Section -->
+      <section id="section-genres" class="content-section">
+          <div class="flex items-center justify-between mb-6">
+              <h2 class="text-xl font-bold">Popular Series by Category</h2>
+              <a href="#" class="text-xs font-bold text-gray-400 hover:text-black flex items-center gap-1">
+                  View all <i class="fas fa-chevron-right text-[10px]"></i>
+              </a>
+          </div>
+
+          <!-- Genre Pills -->
+          <div id="genrePills" class="flex gap-2 overflow-x-auto no-scrollbar pb-2 mb-6">
+              <!-- JS Injected -->
+          </div>
+
+          <!-- Content Grid -->
+          <div id="contentGrid" class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-8">
+              <!-- JS Injected Cards -->
+          </div>
+          
+          <div class="flex justify-center mt-6 mobile-hidden"> 
+          </div>
+      </section>
+
+      <!-- Indie Creators Section (Removed) -->
+
+    </main>
+    
+    <!-- Premium Footer -->
+    <footer class="border-t border-gray-200 bg-white pt-10 pb-16">
+        <!-- App Download CTA -->
+        <div class="flex justify-center items-center gap-6 mb-12 py-4 border-b border-gray-100 max-w-[1000px] mx-auto pb-10">
+            <div class="bg-white p-1 border border-gray-200 shadow-sm rounded">
+                 <!-- Mock QR -->
+                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://webtoons.com" class="w-20 h-20" alt="QR Code">
+            </div>
+            <div class="text-left">
+                <p class="text-sm font-bold text-gray-900 mb-2">Download MamaStoria now!</p>
+                <div class="flex gap-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" class="h-10 cursor-pointer hover:opacity-80">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" class="h-10 cursor-pointer hover:opacity-80">
+                </div>
+            </div>
+        </div>
+
+        <!-- Social & Links -->
+        <div class="flex flex-col items-center gap-8">
+            <!-- Social Icons -->
+            <div class="flex gap-8 text-2xl text-black">
+                 <i class="fab fa-facebook hover:opacity-70 cursor-pointer"></i>
+                 <i class="fab fa-instagram hover:opacity-70 cursor-pointer"></i>
+                 <i class="fab fa-twitter hover:opacity-70 cursor-pointer"></i> <!-- or fa-x-twitter if available, using twitter for safety -->
+                 <i class="fab fa-youtube hover:opacity-70 cursor-pointer"></i>
+            </div>
+            
+            <!-- Logo & Copyright -->
+            <div class="text-center mt-4">
+                <div class="w-24 mx-auto mb-2 flex items-center justify-center">
+                    <img src="src/mamastoria-large.png" alt="MamaStoria" class="w-full h-auto object-contain">
+                </div>
+                <p class="text-[11px] text-gray-400">© Never MamaStoria</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Runtime Config -->
+    <script>
+      window.API_BASE = "https://nanobanana-backend-1089713441636.us-central1.run.app/api/v1/";
+    </script>
+    <script src="src/main.js"></script>
+  </body>
+</html>

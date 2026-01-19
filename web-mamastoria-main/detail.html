@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Comic Detail — MamaStoria</title>
+    <link rel="icon" type="image/png" href="src/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body class="bg-white text-gray-900">
+    
+    <!-- ==================== HEADER ==================== -->
+    <header class="fixed top-0 left-0 right-0 bg-white border-b border-gray-100 z-50 shadow-sm">
+      <div class="max-w-[1400px] mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+          <!-- Back Button & Logo -->
+          <div class="flex items-center gap-4">
+            <a href="index.html" class="p-2 rounded-lg hover:bg-gray-100 transition" title="Back to Home">
+              <i class="fas fa-arrow-left text-gray-600 text-lg"></i>
+            </a>
+            <a href="index.html" class="hidden sm:flex items-center" title="MamaStoria Home">
+              <img src="src/mamastoria-large.png" alt="MamaStoria" class="h-8 w-auto object-contain">
+            </a>
+          </div>
+
+          <!-- Title (Desktop) -->
+          <h1 class="hidden md:block flex-1 text-center text-lg font-bold text-gray-900 truncate px-4" id="headerTitle">Loading...</h1>
+
+          <!-- Right: Share & More -->
+          <div class="flex items-center gap-2">
+            <button id="shareBtn" class="p-2 rounded-lg hover:bg-gray-100 transition" title="Share">
+              <i class="fas fa-share-alt text-gray-600 text-lg"></i>
+            </button>
+            <button id="moreBtn" class="p-2 rounded-lg hover:bg-gray-100 transition" title="More Options">
+              <i class="fas fa-ellipsis-v text-gray-600 text-lg"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-[70px] pb-20">
+      
+      <!-- ==================== HERO SECTION ==================== -->
+      <section class="bg-gradient-to-b from-gray-50 to-white border-b border-gray-100">
+        <div class="max-w-[1400px] mx-auto px-4 py-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+            
+            <!-- Cover Image -->
+            <div class="md:col-span-1 flex justify-center md:justify-start">
+              <div class="w-48 md:w-56 aspect-[3/4] rounded-lg overflow-hidden shadow-lg">
+                <img id="detailCover" class="w-full h-full object-cover" alt="Comic Cover" />
+              </div>
+            </div>
+
+            <!-- Info & Actions -->
+            <div class="md:col-span-2">
+              <!-- Badges -->
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span id="genreBadge" class="px-3 py-1 bg-[#00D564] text-white text-xs font-semibold rounded-full">
+                  Genre
+                </span>
+                <span id="statusBadge" class="px-3 py-1 bg-gray-200 text-gray-700 text-xs font-semibold rounded-full">
+                  Ongoing
+                </span>
+              </div>
+
+              <!-- Title & Author -->
+              <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2" id="detailTitle">Loading...</h1>
+              <p class="text-lg text-gray-600 mb-4" id="detailAuthor">by Unknown Author</p>
+
+              <!-- Stats -->
+              <div class="flex flex-wrap gap-6 mb-6 text-sm">
+                <div>
+                  <p class="text-gray-400 text-xs uppercase font-semibold">Views</p>
+                  <p class="text-xl font-bold text-gray-900" id="detailViews">0</p>
+                </div>
+                <div>
+                  <p class="text-gray-400 text-xs uppercase font-semibold">Likes</p>
+                  <p class="text-xl font-bold text-[#00D564]" id="detailLikes">0</p>
+                </div>
+                <div>
+                  <p class="text-gray-400 text-xs uppercase font-semibold">Rating</p>
+                  <p class="text-xl font-bold text-gray-900">★★★★★</p>
+                </div>
+              </div>
+
+              <!-- Description -->
+              <p class="text-gray-600 leading-relaxed mb-6" id="detailDesc">
+                Loading description...
+              </p>
+
+              <!-- Action Buttons -->
+              <div class="flex flex-col sm:flex-row gap-3">
+                <a id="readNowBtn" href="#" class="flex-1 px-6 py-3 bg-[#00D564] text-white font-bold rounded-lg hover:bg-[#00c255] transition text-center">
+                  <i class="fas fa-play mr-2"></i>Read Now
+                </a>
+                <button class="flex-1 px-6 py-3 border-2 border-gray-300 text-gray-700 font-bold rounded-lg hover:border-gray-400 transition">
+                  <i class="fas fa-bookmark mr-2"></i>Bookmark
+                </button>
+                <button class="flex-1 px-6 py-3 border-2 border-gray-300 text-gray-700 font-bold rounded-lg hover:border-gray-400 transition">
+                  <i class="fas fa-heart mr-2"></i>Like
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== TABS ==================== -->
+      <section class="sticky top-[70px] bg-white border-b border-gray-100 z-40">
+        <div class="max-w-[1400px] mx-auto px-4">
+          <div class="flex items-center gap-1 border-b border-gray-100 overflow-x-auto no-scrollbar">
+            <button class="detail-tab active px-6 py-4 border-b-2 border-[#00D564] text-gray-900 font-semibold text-sm whitespace-nowrap">
+              <i class="fas fa-list mr-2"></i>Episodes
+            </button>
+            <button class="detail-tab px-6 py-4 border-b-2 border-transparent text-gray-600 font-semibold text-sm hover:text-gray-900 whitespace-nowrap transition">
+              <i class="fas fa-info-circle mr-2"></i>About
+            </button>
+            <button class="detail-tab px-6 py-4 border-b-2 border-transparent text-gray-600 font-semibold text-sm hover:text-gray-900 whitespace-nowrap transition">
+              <i class="fas fa-star mr-2"></i>Reviews
+            </button>
+            <button class="detail-tab px-6 py-4 border-b-2 border-transparent text-gray-600 font-semibold text-sm hover:text-gray-900 whitespace-nowrap transition">
+              <i class="fas fa-users mr-2"></i>Community
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== EPISODES LIST ==================== -->
+      <section class="max-w-[1400px] mx-auto px-4 py-8">
+        <div class="mb-6">
+          <h2 class="text-2xl font-bold text-gray-900 mb-2">Episodes</h2>
+          <p class="text-gray-500 text-sm">
+            <span id="episodeCount">0</span> episodes available
+          </p>
+        </div>
+
+        <!-- Episodes Container -->
+        <div id="epLoading" class="flex justify-center py-12">
+          <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-[#00D564]"></div>
+        </div>
+
+        <ul id="episodeList" class="space-y-2 hidden">
+          <!-- Episodes injected by JS -->
+        </ul>
+      </section>
+
+      <!-- ==================== RELATED SERIES ==================== -->
+      <section class="max-w-[1400px] mx-auto px-4 py-12 border-t border-gray-100">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">You Might Also Like</h2>
+        <div id="relatedSeries" class="horizontal-scroll-container">
+          <!-- Related series cards injected by JS -->
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-gray-900 text-white border-t border-gray-800 mt-20">
+      <div class="max-w-[1400px] mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div>
+            <h4 class="font-semibold text-white mb-4">About MamaStoria</h4>
+            <p class="text-gray-400 text-sm leading-relaxed">Discover amazing webtoons and comics from creators around the world.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white mb-4">Support</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="#" class="hover:text-white transition">Help Center</a></li>
+              <li><a href="#" class="hover:text-white transition">Report Issue</a></li>
+              <li><a href="#" class="hover:text-white transition">Contact Us</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white mb-4">Legal</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+              <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
+          <p>&copy; 2026 MamaStoria. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Runtime Config -->
+    <script>
+      window.API_BASE = "https://nanobanana-backend-1089713441636.us-central1.run.app/api/v1/";
+    </script>
+    <script src="src/detail.js"></script>
+  </body>
+</html>

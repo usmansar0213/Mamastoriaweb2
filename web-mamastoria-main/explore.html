@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Explore - MamaStoria</title>
+    <link rel="icon" type="image/png" href="src/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body class="bg-white text-gray-900">
+    
+    <!-- ==================== HEADER ==================== -->
+    <header class="fixed top-0 left-0 right-0 bg-white border-b border-gray-100 z-50 shadow-sm">
+      <div class="max-w-[1400px] mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+          <a href="index.html" class="flex items-center gap-2 text-lg font-bold hover:text-[#00D564] transition">
+            <i class="fas fa-arrow-left"></i>
+            <img src="src/mamastoria-large.png" alt="MamaStoria" class="h-10 w-auto object-contain">
+          </a>
+          
+          <h1 class="text-2xl font-bold hidden md:block flex-1 text-center">Explore Tags & Genres</h1>
+          
+          <div class="flex items-center gap-4">
+            <button id="searchToggle" class="p-2 rounded-lg hover:bg-gray-100 transition">
+              <i class="fas fa-search text-gray-600 text-lg"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Search / Filter Bar -->
+        <div id="searchBar" class="hidden mt-4 pb-4 border-t border-gray-100">
+          <div class="relative mb-4">
+            <i class="fas fa-search absolute left-4 top-3 text-gray-400"></i>
+            <input 
+              type="text" 
+              id="tagSearchInput" 
+              placeholder="Search tags and genres..." 
+              class="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00D564]"
+            >
+          </div>
+
+          <!-- Filter Controls -->
+          <div class="flex flex-wrap gap-3 items-center">
+            <label class="flex items-center gap-2 px-3 py-2 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100">
+              <span class="text-sm font-semibold">Sort:</span>
+              <select id="sortBy" class="bg-transparent outline-none font-semibold text-sm">
+                <option value="popular">Popular</option>
+                <option value="newest">Newest</option>
+                <option value="trending">Trending</option>
+                <option value="views">Most Read</option>
+              </select>
+            </label>
+
+            <label class="flex items-center gap-2 px-3 py-2 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100">
+              <span class="text-sm font-semibold">Filter:</span>
+              <select id="filterBy" class="bg-transparent outline-none font-semibold text-sm">
+                <option value="">All</option>
+                <option value="free">Free</option>
+                <option value="completed">Completed</option>
+                <option value="ongoing">Ongoing</option>
+              </select>
+            </label>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="pt-24 pb-32 lg:pb-0">
+      <div class="max-w-[1400px] mx-auto px-4">
+
+        <!-- ==================== GENRE/TAG GRID ==================== -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-bold mb-6">Browse by Genre</h2>
+          <div id="genreGrid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <!-- Genre tags injected by JS -->
+          </div>
+        </section>
+
+        <!-- ==================== FILTERED CONTENT GRID ==================== -->
+        <section>
+          <div class="flex items-center justify-between mb-6">
+            <h2 class="text-2xl font-bold">
+              <span id="resultsTitle">Showing Results</span>
+              <span id="resultCount" class="text-sm text-gray-500 font-normal ml-2">(loading...)</span>
+            </h2>
+          </div>
+          
+          <div id="contentGrid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+            <!-- Content cards injected by JS -->
+          </div>
+
+          <!-- Load More Button -->
+          <div id="loadMoreContainer" class="flex justify-center mt-12">
+            <button id="loadMoreBtn" class="px-8 py-3 bg-[#00D564] text-white font-semibold rounded-lg hover:bg-[#00c255] transition">
+              Load More Results
+            </button>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- ==================== MOBILE BOTTOM NAVIGATION ==================== -->
+    <nav id="mobileBottomNav" class="fixed bottom-0 left-0 right-0 lg:hidden bg-white border-t border-gray-200 z-40">
+      <div class="flex items-center justify-around">
+        <a href="index.html" class="flex flex-col items-center justify-center gap-1 py-3 px-6 text-gray-600 hover:text-[#00D564] transition">
+          <i class="fas fa-home text-xl"></i>
+          <span class="text-xs">Home</span>
+        </a>
+        <a href="explore.html" class="flex flex-col items-center justify-center gap-1 py-3 px-6 text-[#00D564] font-semibold">
+          <i class="fas fa-compass text-xl"></i>
+          <span class="text-xs">Explore</span>
+        </a>
+        <a href="#" class="flex flex-col items-center justify-center gap-1 py-3 px-6 text-gray-600 hover:text-[#00D564] transition">
+          <i class="fas fa-bookmark text-xl"></i>
+          <span class="text-xs">Library</span>
+        </a>
+        <a href="#" class="flex flex-col items-center justify-center gap-1 py-3 px-6 text-gray-600 hover:text-[#00D564] transition">
+          <i class="fas fa-user text-xl"></i>
+          <span class="text-xs">Profile</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-[#111827] text-gray-300 mt-16 pt-12 pb-20 lg:pb-12">
+      <div class="max-w-[1400px] mx-auto px-4">
+        <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p class="text-sm text-gray-400 text-center">© 2024 MamaStoria. All rights reserved.</p>
+          <div class="flex flex-wrap items-center justify-center gap-4 text-sm">
+            <a href="terms.html" class="hover:text-[#00D564] transition">Terms</a>
+            <a href="privacy.html" class="hover:text-[#00D564] transition">Privacy</a>
+            <a href="cookies.html" class="hover:text-[#00D564] transition">Cookies</a>
+            <a href="content-policy.html" class="hover:text-[#00D564] transition">Content Policy</a>
+            <a href="ai-disclaimer.html" class="hover:text-[#00D564] transition">AI Disclaimer</a>
+          </div>
+          <div class="flex gap-4">
+            <a href="#" class="hover:text-[#00D564] transition"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="hover:text-[#00D564] transition"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="hover:text-[#00D564] transition"><i class="fab fa-discord"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="src/explore.js"></script>
+  </body>
+</html>
